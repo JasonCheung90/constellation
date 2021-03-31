@@ -1,6 +1,5 @@
 import { JUHE_APPKEY } from "@/config/keys";
 import axios from "axios";
-import qs from "qs";
 
 function axisoGet(options) {
   axios({
@@ -8,7 +7,7 @@ function axisoGet(options) {
     method: "get",
     params: {
       key: JUHE_APPKEY,
-      consName: qs.stringify(options.consName),
+      consName: options.consName,
       type: options.type,
     },
   })
