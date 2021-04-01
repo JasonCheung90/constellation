@@ -3,7 +3,9 @@
 </template>
 
 <script>
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs, onMounted } from "vue";
+import { useStore } from "vuex";
+import getData from "@/services/index";
 
 export default {
   name: "TodayPage",
@@ -11,7 +13,10 @@ export default {
     const state = reactive({
       count: 0,
     });
-
+    const store = useStore();
+    onMounted(() => {
+      getData(store);
+    });
     return {
       ...toRefs(state),
     };

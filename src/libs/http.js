@@ -1,14 +1,12 @@
 import { JUHE_APPKEY } from "@/config/keys";
 import axios from "axios";
 
-function axisoGet(options) {
+function axiosGet(options) {
   axios({
     url: options.url,
     method: "get",
     params: {
       key: JUHE_APPKEY,
-      consName: options.consName,
-      type: options.type,
     },
   })
     .then((res) => {
@@ -19,4 +17,4 @@ function axisoGet(options) {
     });
 }
 
-export { axisoGet };
+export { axiosGet };
